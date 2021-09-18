@@ -1,5 +1,11 @@
 var express = require('express');
 var router = express.Router();
+// var axios = require('axios');
+
+var utils = require('../lib/utils');
+
+// Features we should use
+// 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.12
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
