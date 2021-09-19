@@ -13,7 +13,7 @@ df = df.iloc[:, 1:]
 # The training data is categorical data that has already been preprocessed
 # Each category indicates what that feature alone predicts about the website:
 # Key: 1 = Phishing, 0 = Suspicious, -1 = Legitimate
-X = df.iloc[:, :-1].values
+X = df.iloc[:, [0,1,2,3,4,5,6,7,8,11,13,17,22,23,24]].values
 y = df.iloc[:, -1].values
 
 # Feature scaling
@@ -24,9 +24,10 @@ X = sc.fit_transform(X)
 ann = tf.keras.models.Sequential()
 
 # Add input layer and three hidden layers
-ann.add(tf.keras.layers.Dense(units=30, activation='relu'))
-ann.add(tf.keras.layers.Dense(units=30, activation='relu'))
-ann.add(tf.keras.layers.Dense(units=30, activation='relu'))
+ann.add(tf.keras.layers.Dense(units=15, activation='relu'))
+ann.add(tf.keras.layers.Dense(units=15, activation='relu'))
+ann.add(tf.keras.layers.Dense(units=15, activation='relu'))
+ann.add(tf.keras.layers.Dense(units=15, activation='relu'))
 
 # Add output layer
 ann.add(tf.keras.layers.Dense(units=1))
