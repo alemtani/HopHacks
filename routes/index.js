@@ -18,10 +18,11 @@ const project = '929297422851';
 const location = 'us-central1';
 const endpointId = '8197378154558390272';
 
+const endpoint = `projects/${project}/locations/${location}/endpoints/${endpointId}`;
+
 /* GET home page. */
 router.get('/', async function(req, res, next) {
-  const endpoint = `projects/${project}/locations/${location}/endpoints/${endpointId}`;
-  const url = 'https://spotify-personality-test.herokuapp.com';
+  const url = req.body.url;
   const domain = utils.get_domain(url);
 
   const scores = [];
