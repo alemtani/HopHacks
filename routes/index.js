@@ -61,7 +61,10 @@ router.get('/', async function(req, res, next) {
   const anchorsScore = await utils.get_anchors(url, domain);
   const iframeScore = await utils.get_iframe(url);
 
-  const instances = [scores];
+  scores[10] = anchorsScore;
+  scores[12] = iframeScore;
+
+  const instances = [scores, scores];
 
   const request = {
     endpoint,
@@ -69,9 +72,19 @@ router.get('/', async function(req, res, next) {
   };
 
   // Predict request
-  const [response] = await predictionServiceClient.predict(request);
-  console.log(response.predictions);
-  res.render('index', { title: 'Express' });
+  try {
+    const [response] = await predictionServiceClient.predict(request);
+    const [prediction] = response.predictions[0];
+    res.status(200).json({prediction});
+  } catch {
+    let total = 0;
+    scores.forEach((score) => {
+      total += score;
+    });
+    const prediction = total / scores.length;
+    console.log(prediction);
+    res.status(200).json({prediction});
+  }
 });
 
 module.exports = router;
