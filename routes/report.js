@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const report = require('../models/report')
+const report = require('../models/mongo/report')
 
 router.get('/',async(req,res)=>{
     try{
