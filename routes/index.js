@@ -14,9 +14,9 @@ const clientOptions = {
 // Instantiates a client
 const predictionServiceClient = new PredictionServiceClient(clientOptions);
 
-const project = '929297422851';
-const location = 'us-central1';
-const endpointId = '8197378154558390272';
+const project = // project id;
+const location = // location;
+const endpointId = // endpoint id;
 
 const endpoint = `projects/${project}/locations/${location}/endpoints/${endpointId}`;
 
