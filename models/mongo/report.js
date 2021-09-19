@@ -15,6 +15,18 @@ const reportSchema = new Schema({
     },
     description:{
         type:String
+    },
+    comments:{
+        type:Array,
+        default:[]
+    },
+    upvotes:{
+        type:Array,
+        default:[]
+    },
+    downvotes:{
+        type:Array,
+        default:[]
     }
 },
 {
