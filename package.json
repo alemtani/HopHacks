@@ -12,9 +12,14 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
+
     "morgan": "~1.9.1",
     "puppeteer": "^10.2.0",
     "whois": "^2.13.7",
     "whois-json": "^2.0.4"
+
+    "mongoose": "^6.0.6",
+    "morgan": "~1.9.1"
+
   }
 }
