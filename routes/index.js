@@ -5,10 +5,10 @@ var router = express.Router();
 var utils = require('../lib/utils');
 
 // Features we should use
-// 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.12
+// 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.12
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', async function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
